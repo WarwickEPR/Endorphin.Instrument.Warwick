@@ -29,15 +29,12 @@ let readRates = async {
     printfn "Starting to emit"
     a.InternalTrigger 100
     a.EmitRate()
-    Console.ReadLine() |> ignore
-//    for i in 1..1000 do
-//        do! Async.Sleep(10)
-//    a.SilenceRate()
-//    printfn "Silenced emission"
-//    do! Async.Sleep(2000)
-//    printfn "Starting again"
-//    a.EmitRate()
-//    do! Async.Sleep(2000)
+    a.SilenceRate()
+    printfn "Silenced emission"
+    do! Async.Sleep(2000)
+    printfn "Starting again"
+    a.EmitRate()
+    do! Async.Sleep(2000)
     printfn "Closing"
     }
 
