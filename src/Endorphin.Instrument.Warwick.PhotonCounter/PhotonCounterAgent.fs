@@ -7,7 +7,6 @@ open System
 open System.IO.Ports
 open System.Threading
 open System.Text.RegularExpressions
-open FSharp.Control.Reactive
 
 module PhotonCounterAgent =
 
@@ -35,7 +34,7 @@ module PhotonCounterAgent =
         StopBits    : StopBits
         Parity      : Parity }
 
-    type Agent(comPort, ?serialConfiguration, ?notificationContext:SynchronizationContext, ?ct:CancellationToken) =
+    type PhotonCounterAgent(comPort, ?serialConfiguration, ?notificationContext:SynchronizationContext, ?ct:CancellationToken) =
 
         let logger = log4net.LogManager.GetLogger "PhotonCounter"
         let notifier = NotificationEvent<string>()

@@ -7,24 +7,25 @@
 #r "System.Core.dll"
 #r "System.dll"
 #r "System.Numerics.dll"
-#r "../../packages/Rx-Interfaces/lib/net45/System.Reactive.Interfaces.dll"
+#r "../../packages/System.Reactive.Core/lib/net45/System.Reactive.Core.dll"
+#r "../../packages/System.Reactive.Linq/lib/net45/System.Reactive.Linq.dll"
 #r "../../packages/System.Reactive.Interfaces/lib/net45/System.Reactive.Interfaces.dll"
-#r "../../packages/Rx-Core/lib/net45/System.Reactive.Core.dll"
-#r "../../packages/Rx-Linq/lib/net45/System.Reactive.Linq.dll"
 #r "./bin/Debug/Endorphin.Instrument.Warwick.PhotonCounter.dll"
-#r "../../packages/FSharp.Control.Reactive/lib/net45/FSharp.Control.Reactive.dll"
 
 open Endorphin.Instrument.Warwick.PhotonCounter
 open PhotonCounterAgent
-open FSharp.Control.Reactive
 open System
 open System.Reactive.Concurrency
+open System.Reactive.Linq
 
 let readRates = async {
-    use a = new Agent("COM4")
+    use a = new PhotonCounterAgent("COM4")
 
-    a.Rate() |> Observable.subscribeOn Scheduler.Default |> Observable.add (printfn "Rate: %d")
-    a.Lines() |> Observable.subscribeOn Scheduler.Default |> Observable.add (printfn "Line: %s")
+    let subscribeOn (scheduler:IScheduler) observable =
+        Observable.SubscribeOn(observable,scheduler)
+    
+    a.Rate() |> subscribeOn Scheduler.Default |> Observable.add (printfn "Rate: %d")
+    a.Lines() |> subscribeOn Scheduler.Default |> Observable.add (printfn "Line: %s")
 
     printfn "Starting to emit"
     a.InternalTrigger 100
