@@ -4,7 +4,7 @@
 #I "../../bin"
 
 (**
-Endorphin.Instrument.Warwick.PhotonCounter
+Endorphin.Instrument.Warwick
 ======================
 
 Documentation
@@ -13,9 +13,9 @@ Documentation
   <div class="span1"></div>
   <div class="span6">
     <div class="well well-small" id="nuget">
-      The Endorphin.Instrument.Warwick.PhotonCounter library can be <a href="https://nuget.org/packages/Endorphin.Instrument.Warwick.PhotonCounter">installed from NuGet</a>:
+      The Endorphin.Instrument.Warwick libraries can be <a href="https://nuget.org/packages/Endorphin.Instrument.Warwick">installed from NuGet</a>:
       <pre>PM> Install-Package Endorphin.Instrument.Warwick.PhotonCounter -Pre
-PM> Install-Package Endorphin.Instrument.Warwick.PhotonCounter.NationalInstruments -Pre</pre>
+PM> Install-Package Endorphin.Instrument.Warwick.PhotonCounter -Pre</pre>
     </div>
   </div>
   <div class="span1"></div>
@@ -58,9 +58,9 @@ The library is available under Public Domain license, which allows modification 
 redistribution for both commercial and non-commercial purposes. For more information see the
 [License file][license] in the GitHub repository.
 
-  [content]: https://github.com/fsprojects/Endorphin.Instrument.Warwick.PhotonCounter/tree/master/docs/content
-  [gh]: https://github.com/fsprojects/Endorphin.Instrument.Warwick.PhotonCounter
-  [issues]: https://github.com/fsprojects/Endorphin.Instrument.Warwick.PhotonCounter/issues
-  [readme]: https://github.com/fsprojects/Endorphin.Instrument.Warwick.PhotonCounter/blob/master/README.md
-  [license]: https://github.com/fsprojects/Endorphin.Instrument.Warwick.PhotonCounter/blob/master/LICENSE.txt
+  [content]: https://github.com/fsprojects/Endorphin.Instrument.Warwick/tree/master/docs/content
+  [gh]: https://github.com/fsprojects/Endorphin.Instrument.Warwick
+  [issues]: https://github.com/fsprojects/Endorphin.Instrument.Warwick/issues
+  [readme]: https://github.com/fsprojects/Endorphin.Instrument.Warwick/blob/master/README.md
+  [license]: https://github.com/fsprojects/Endorphin.Instrument.Warwick/blob/master/LICENSE.txt
 *)
