@@ -6,11 +6,11 @@ owners
 authors 
     University of Warwick EPR and Diamond group
 projectUrl
-    https://warwickepr.github.io/Endorphin.Instrument.Warwick.PhotonCounter
+    https://warwickepr.github.io/Endorphin.Instrument.Warwick
 iconUrl
-    https://raw.githubusercontent.com/WarwickEPR/Endorphin.Instrument.Warwick.PhotonCounter/master/docs/files/img/logo.png
+    https://raw.githubusercontent.com/WarwickEPR/Endorphin.Instrument.Warwick/master/docs/files/img/logo.png
 licenseUrl
-    http://github.com/WarwickEPR/Endorphin.Instrument.Warwick.PhotonCounter/blob/master/LICENSE.txt
+    http://github.com/WarwickEPR/Endorphin.Instrument.Warwick/blob/master/LICENSE.txt
 requireLicenseAcceptance
     false
 copyright
