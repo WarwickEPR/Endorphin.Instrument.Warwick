@@ -2,7 +2,8 @@
 
 // Warning: generated file; your changes could be lost when a new file is generated.
 #I __SOURCE_DIRECTORY__
-#r "../../packages/Endorphin.Core/lib/net452/Endorphin.Core.dll"
+#r "../../packages/Endorphin.IO/lib/net452/Endorphin.IO.dll"
+#r "../../packages/Endorphin.IO.Reactive/lib/net452/Endorphin.IO.Reactive.dll"
 #r "../../packages/log4net/lib/net45-full/log4net.dll"
 #r "System.Core.dll"
 #r "System.dll"
@@ -13,29 +14,29 @@
 #r "./bin/Debug/Endorphin.Instrument.Warwick.PhotonCounter.dll"
 
 open Endorphin.Instrument.Warwick.PhotonCounter
-open PhotonCounterAgent
-open System
 open System.Reactive.Concurrency
 open System.Reactive.Linq
 
 let readRates = async {
-    use a = new PhotonCounterAgent("COM4")
+    use a = new PhotonCounter("COM4")
+    do! a.Initialise
 
     let subscribeOn (scheduler:IScheduler) observable =
         Observable.SubscribeOn(observable,scheduler)
     
     a.Rate() |> subscribeOn Scheduler.Default |> Observable.add (printfn "Rate: %d")
     a.Lines() |> subscribeOn Scheduler.Default |> Observable.add (printfn "Line: %s")
+    Observable.Take(a.Rate(),10) |> Observable.ToArray |>  Observable.add (printfn "Ten results: %A")
 
     printfn "Starting to emit"
     a.InternalTrigger 100
     a.EmitRate()
+    do! Async.Sleep(3000)
     a.SilenceRate()
     printfn "Silenced emission"
-    do! Async.Sleep(2000)
     printfn "Starting again"
     a.EmitRate()
-    do! Async.Sleep(2000)
+    do! Async.Sleep(3000)
     printfn "Closing"
     }
 

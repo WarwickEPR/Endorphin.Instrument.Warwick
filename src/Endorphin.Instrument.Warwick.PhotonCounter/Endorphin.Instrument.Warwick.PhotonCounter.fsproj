@@ -55,9 +55,9 @@
       <Link>paket-files/Endorphin.Core.Reactive.fs</Link>
     </Compile>
     <Compile Include="AssemblyInfo.fs" />
-    <None Include="TestPhotonCounter.fsx" />
     <Content Include="packages.config" />
     <Compile Include="PhotonCounterAgent.fs" />
+    <None Include="TestPhotonCounter.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -77,6 +77,28 @@
       <ItemGroup>
         <Reference Include="Endorphin.Core">
           <HintPath>..\..\packages\Endorphin.Core\lib\net452\Endorphin.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Endorphin.IO">
+          <HintPath>..\..\packages\Endorphin.IO\lib\net452\Endorphin.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Endorphin.IO.Reactive">
+          <HintPath>..\..\packages\Endorphin.IO.Reactive\lib\net452\Endorphin.IO.Reactive.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

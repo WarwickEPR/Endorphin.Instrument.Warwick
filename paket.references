@@ -1,5 +1,6 @@
 FSharp.Core
 Endorphin.Core
+Endorphin.IO
 Endorphin.IO.Reactive
 System.Reactive
 System.Reactive.Interfaces
