@@ -55,12 +55,10 @@ type PhotonCounter(port) as photonCounterAgent =
         |> Observable.filter (fun s -> s.StartsWith("Rate"))
         |> Observable.choose extractRate
                 
-                
-                
-                
-                
-                
-                
+    interface IDisposable with
+        member x.Dispose() =
+            x.SilenceRate()
+            
                 
                 
                 
