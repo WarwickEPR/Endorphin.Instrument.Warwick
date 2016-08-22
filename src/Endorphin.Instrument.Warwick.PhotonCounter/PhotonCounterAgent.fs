@@ -3,16 +3,12 @@
 namespace Endorphin.Instrument.Warwick.PhotonCounter
 
 open System
+open Endorphin.IO
 open Endorphin.IO.Reactive
 open System.Text.RegularExpressions
 
 type PhotonCounter(port) as photonCounterAgent =
-    inherit SerialInstrument<string>("Photon Counter",port,{ BaudRate = 9600
-                                                             DataBits = 8
-                                                             StopBits = IO.Ports.StopBits.None
-                                                             Parity = IO.Ports.Parity.None
-                                                             LineEnding = "\r\n" })
-    override __.ExtractReply received = Endorphin.IO.LineAgent.nextLine received
+    inherit LineObservableSerialInstrument("Photon Counter",port,DefaultSerialConfiguration)
 
     member x.Initialise = async {
         // initial configuration
