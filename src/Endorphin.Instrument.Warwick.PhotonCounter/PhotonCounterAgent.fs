@@ -7,32 +7,37 @@ open Endorphin.IO.Reactive
 open System.Text.RegularExpressions
 
 type PhotonCounter(port) as photonCounterAgent =
-    inherit SerialInstrument("Photon Counter",port)
+    inherit SerialInstrument<string>("Photon Counter",port,{ BaudRate = 9600
+                                                             DataBits = 8
+                                                             StopBits = IO.Ports.StopBits.None
+                                                             Parity = IO.Ports.Parity.None
+                                                             LineEnding = "\r\n" })
+    override __.ExtractReply received = Endorphin.IO.LineAgent.nextLine received
 
     member x.Initialise = async {
         // initial configuration
         [ "HIDE DATA"
           "INT"
-          "TB 100ms" ] |> List.iter photonCounterAgent.WriteLine
+          "TB 100ms" ] |> List.iter photonCounterAgent.Send
         do! Async.Sleep 500 // Give photon counter time to process instructions
-        photonCounterAgent.SerialPort.DiscardInBuffer() // Throw away any trailing count rates
+        photonCounterAgent.Serial.DiscardInBuffer() // Throw away any trailing count rates
         photonCounterAgent.StartReading() } // Start reading data
 
     member x.EmitRate() =
-        x.WriteLine "SHOW RATE"
+        "SHOW RATE" |> x.Send
 
     member x.SilenceRate() =
-        x.WriteLine "HIDE DATA"
+        "HIDE DATA" |> x.Send
 
     member x.InternalTrigger duration =
-        duration |> sprintf "TB %dms" |> x.WriteLine
-        "INT" |> x.WriteLine
+        duration |> sprintf "TB %dms" |> x.Send
+        "INT" |> x.Send
 
     member x.ExternalTrigger() =
-        "EXT" |> x.WriteLine
+        "EXT" |> x.Send
 
     member x.TwoExternalTrigger() =
-        "EXT FULL" |> x.WriteLine
+        "EXT FULL" |> x.Send
 
     member x.Rate() =
 
