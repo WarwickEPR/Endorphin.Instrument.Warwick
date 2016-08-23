@@ -8,14 +8,9 @@
 #r "System.Core.dll"
 #r "System.dll"
 #r "System.Numerics.dll"
-#r "../../packages/System.Reactive.Core/lib/net45/System.Reactive.Core.dll"
-#r "../../packages/System.Reactive.Linq/lib/net45/System.Reactive.Linq.dll"
-#r "../../packages/System.Reactive.Interfaces/lib/net45/System.Reactive.Interfaces.dll"
 #r "./bin/Debug/Endorphin.Instrument.Warwick.PhotonCounter.dll"
 
 open Endorphin.Instrument.Warwick.PhotonCounter
-open System.Reactive.Concurrency
-open System.Reactive.Linq
 
 let readRates = async {
     use a = new PhotonCounter("COM4")

@@ -6,13 +6,12 @@ open System
 open Endorphin.IO.Reactive
 open System.Text.RegularExpressions
 
+module Configuration =
+    open Endorphin.IO
+    let serial = { Serial.DefaultSerialConfiguration with BaudRate = 115200; StopBits = System.IO.Ports.StopBits.One}
+
 type PhotonCounter(port) as photonCounterAgent =
-    inherit SerialInstrument<string>("Photon Counter",port,{ BaudRate = 9600
-                                                             DataBits = 8
-                                                             StopBits = IO.Ports.StopBits.None
-                                                             Parity = IO.Ports.Parity.None
-                                                             LineEnding = "\r\n" })
-    override __.ExtractReply received = Endorphin.IO.LineAgent.nextLine received
+    inherit LineObservableSerialInstrument("Photon Counter",port,Configuration.serial)
 
     member x.Initialise = async {
         // initial configuration
@@ -63,10 +62,3 @@ type PhotonCounter(port) as photonCounterAgent =
     interface IDisposable with
         member x.Dispose() =
             x.SilenceRate()
-            
-                
-                
-                
-                
-                
-                
