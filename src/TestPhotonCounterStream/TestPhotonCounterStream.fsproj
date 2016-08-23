@@ -60,6 +60,31 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Compile Include="..\..\paket-files\WarwickEPR\Endorphin.Core\src\Endorphin.Core.Reactive.fs">
+      <Paket>True</Paket>
+      <Link>paket-files/Endorphin.Core.Reactive.fs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Program.fs" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Endorphin.Instrument.Warwick.PhotonCounter\Endorphin.Instrument.Warwick.PhotonCounter.fsproj">
+      <Name>Endorphin.Instrument.Warwick.PhotonCounter</Name>
+      <Project>{da487c50-b45e-4490-a87d-955efef4757c}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
@@ -528,29 +553,4 @@
       </ItemGroup>
     </When>
   </Choose>
-  <ItemGroup>
-    <Compile Include="..\..\paket-files\WarwickEPR\Endorphin.Core\src\Endorphin.Core.Reactive.fs">
-      <Paket>True</Paket>
-      <Link>paket-files/Endorphin.Core.Reactive.fs</Link>
-    </Compile>
-    <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Program.fs" />
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Endorphin.Instrument.Warwick.PhotonCounter\Endorphin.Instrument.Warwick.PhotonCounter.fsproj">
-      <Name>Endorphin.Instrument.Warwick.PhotonCounter</Name>
-      <Project>{da487c50-b45e-4490-a87d-955efef4757c}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
