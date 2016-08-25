@@ -57,7 +57,6 @@
     <Compile Include="AssemblyInfo.fs" />
     <Content Include="packages.config" />
     <Compile Include="PhotonCounterAgent.fs" />
-    <None Include="TestPhotonCounter.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

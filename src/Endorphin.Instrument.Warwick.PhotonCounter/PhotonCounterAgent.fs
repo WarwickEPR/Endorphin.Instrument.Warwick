@@ -8,7 +8,7 @@ open System.Text.RegularExpressions
 
 module Configuration =
     open Endorphin.IO
-    let serial = { Serial.DefaultSerialConfiguration with BaudRate = 115200; StopBits = System.IO.Ports.StopBits.One}
+    let serial = { Serial.DefaultSerialConfiguration with BaudRate = 460800 }
 
 type PhotonCounter(port) as photonCounterAgent =
     inherit LineObservableSerialInstrument("Photon Counter",port,Configuration.serial)
