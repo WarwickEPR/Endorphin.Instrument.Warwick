@@ -5,6 +5,7 @@ namespace Endorphin.Instrument.Warwick.PhotonCounter
 open System
 open Endorphin.IO.Reactive
 open System.Text.RegularExpressions
+open FSharp.Control.Reactive
 
 module Configuration =
     open Endorphin.IO
@@ -55,8 +56,8 @@ type PhotonCounter(port) as photonCounterAgent =
             else
                 None
 
-        x.Lines()
-        |> Observable.filter (fun s -> s.StartsWith("Rate"))
-        |> Observable.choose extractRate
+        x.Lines() |> Observable.map (Array.filter (fun s -> s.StartsWith("Rate")) >> Array.choose extractRate)
+                  |> Observable.flatmapSeq Array.toSeq
+
     member x.OnFinish() = x.SilenceRate(); base.OnFinish()
     interface IDisposable with member x.Dispose() = x.OnFinish()
