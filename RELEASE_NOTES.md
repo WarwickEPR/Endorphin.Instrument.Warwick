@@ -1,3 +1,6 @@
+## 0.1.5 - 2017-01-06
+- Remove Rx.NET Rx  pin and update to Reactive Extensions 3.x
+
 ## 0.1.4 - 2017-01-05
 - Update to use new line IO with batched line processing
 

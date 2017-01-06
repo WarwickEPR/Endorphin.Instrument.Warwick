@@ -5,8 +5,7 @@ nuget FSharp.Core redirects: force
 nuget Endorphin.Core
 nuget Endorphin.IO.Reactive
 nuget log4net
-nuget FSharp.Control.Reactive ~> 3.4.1
-nuget Rx-PlatformServices ~> 2.2.5
+nuget FSharp.Control.Reactive
 
 github WarwickEPR/Endorphin.Core src/Endorphin.Core.Reactive.fs
 
