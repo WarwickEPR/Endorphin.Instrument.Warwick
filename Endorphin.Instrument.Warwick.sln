@@ -1,13 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Endorphin.Instrument.Warwick.PhotonCounter", "src\Endorphin.Instrument.Warwick.PhotonCounter\Endorphin.Instrument.Warwick.PhotonCounter.fsproj", "{DA487C50-B45E-4490-A87D-955EFEF4757C}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TestPhotonCounterStream", "src\TestPhotonCounterStream\TestPhotonCounterStream.fsproj", "{0EE9D35D-ADCD-49AA-BCF1-09D0048A955F}"
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
