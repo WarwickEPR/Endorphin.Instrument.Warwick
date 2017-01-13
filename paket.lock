@@ -3,12 +3,12 @@ NUGET
     Endorphin.Core (0.3.8)
       FSharp.Core
       log4net (>= 2.0 < 3.0)
-    Endorphin.IO (0.2.2)
+    Endorphin.IO (0.2.3)
       FSharp.Core
       log4net
-    Endorphin.IO.Reactive (0.2.2)
+    Endorphin.IO.Reactive (0.2.3)
       Endorphin.Core
-      Endorphin.IO (>= 0.2.2)
+      Endorphin.IO (>= 0.2.3)
       FSharp.Control.Reactive
       FSharp.Core
       log4net
@@ -651,5 +651,5 @@ NUGET
     SourceLink.Fake (1.1)
 GITHUB
   remote: fsharp/FAKE
-    modules/Octokit/Octokit.fsx (4c38cad5f0a1d3f29c22e50ef2bff189be47c730)
+    modules/Octokit/Octokit.fsx (749fbad6f6808c569e542ee5eaf3c4cc7275c029)
       Octokit (>= 0.20)

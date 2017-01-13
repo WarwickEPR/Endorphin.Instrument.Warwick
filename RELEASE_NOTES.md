@@ -1,3 +1,6 @@
+## 0.1.6 - 2017-01-13
+- Update Endorphin.IO dependency. Performance greatly improved
+
 ## 0.1.5 - 2017-01-06
 - Remove Rx.NET Rx  pin and update to Reactive Extensions 3.x
 
