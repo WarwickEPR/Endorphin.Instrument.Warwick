@@ -1,3 +1,6 @@
+## 0.1.8 - 2017-02-24
+- Update Endorphin.IO dependency
+
 ## 0.1.7 - 2017-02-23
 - Update Endorphin.IO dependency
 

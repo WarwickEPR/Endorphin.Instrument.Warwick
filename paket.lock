@@ -3,12 +3,12 @@ NUGET
     Endorphin.Core (0.3.8)
       FSharp.Core
       log4net (>= 2.0 < 3.0)
-    Endorphin.IO (0.2.4)
+    Endorphin.IO (0.3)
       FSharp.Core
       log4net
-    Endorphin.IO.Reactive (0.2.4)
+    Endorphin.IO.Reactive (0.3)
       Endorphin.Core
-      Endorphin.IO (>= 0.2.4)
+      Endorphin.IO (>= 0.3)
       FSharp.Control.Reactive
       FSharp.Core
       log4net
@@ -478,12 +478,12 @@ NUGET
       Microsoft.NETCore.Targets (>= 1.1) - framework: >= netstandard13
       System.Runtime (>= 4.3) - framework: >= netstandard13
     System.Runtime.InteropServices (4.3) - framework: >= netstandard13
-      Microsoft.NETCore.Platforms (>= 1.1) - framework: dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15
-      Microsoft.NETCore.Targets (>= 1.1) - framework: dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15
-      System.Reflection (>= 4.3) - framework: dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15
-      System.Reflection.Primitives (>= 4.3) - framework: dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15
-      System.Runtime (>= 4.3) - framework: net462, >= net463, dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15
-      System.Runtime.Handles (>= 4.3) - framework: dnxcore50, netstandard13, >= netstandard15
+      Microsoft.NETCore.Platforms (>= 1.1) - framework: dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15, netcore11
+      Microsoft.NETCore.Targets (>= 1.1) - framework: dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15, netcore11
+      System.Reflection (>= 4.3) - framework: dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15, netcore11
+      System.Reflection.Primitives (>= 4.3) - framework: dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15, netcore11
+      System.Runtime (>= 4.3) - framework: net462, >= net463, dnxcore50, netstandard11, netstandard12, netstandard13, >= netstandard15, netcore11
+      System.Runtime.Handles (>= 4.3) - framework: dnxcore50, netstandard13, >= netstandard15, netcore11
     System.Runtime.InteropServices.RuntimeInformation (4.3) - framework: >= netstandard13
       runtime.native.System (>= 4.3) - framework: >= netstandard11
       System.Reflection (>= 4.3) - framework: dnxcore50, >= netstandard11
@@ -571,7 +571,7 @@ NUGET
       System.Security.Cryptography.Primitives (>= 4.3) - framework: >= netstandard13
       System.Text.Encoding (>= 4.3) - framework: >= netstandard13
     System.Security.Cryptography.OpenSsl (4.3) - framework: >= netstandard16
-      runtime.native.System.Security.Cryptography.OpenSsl (>= 4.3)
+      runtime.native.System.Security.Cryptography.OpenSsl (>= 4.3) - framework: >= net463, >= netstandard16, monoandroid, monotouch, xamarinios, xamarinmac
       System.Collections (>= 4.3) - framework: >= netstandard16
       System.IO (>= 4.3) - framework: >= net463, >= netstandard16
       System.Resources.ResourceManager (>= 4.3) - framework: >= netstandard16
@@ -648,7 +648,7 @@ NUGET
       System.Collections (>= 4.3) - framework: dnxcore50, >= netstandard16
       System.Globalization (>= 4.3) - framework: dnxcore50, >= netstandard16
       System.Resources.ResourceManager (>= 4.3) - framework: dnxcore50, >= netstandard16
-      System.Runtime (>= 4.3) - framework: dnxcore50, netstandard10, netstandard13, >= netstandard16
+      System.Runtime (>= 4.3) - framework: dnxcore50, netstandard10, netstandard13, >= netstandard16, netcore11
       System.Runtime.Extensions (>= 4.3) - framework: dnxcore50, >= netstandard16
       System.Threading (>= 4.3) - framework: dnxcore50, >= netstandard16
     System.Threading (4.3) - framework: >= netstandard13
