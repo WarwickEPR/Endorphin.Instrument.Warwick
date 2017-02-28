@@ -1,3 +1,7 @@
+## 0.1.9 - 2017-02-28
+- Update Endorphin.IO dependency
+- Reduce required version of FSharp.Core
+
 ## 0.1.8 - 2017-02-24
 - Update Endorphin.IO dependency
 
